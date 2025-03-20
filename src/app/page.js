@@ -15,10 +15,13 @@ export default function Home() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Initialize Lenis
-  const lenis = new Lenis({
-    autoRaf: true,
-  });
+  if (typeof window !== 'undefined') {
+    // Code that uses window object
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+  }
 
   return (
 
