@@ -3,6 +3,8 @@
 import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import Link from 'next/link';
+import { IoIosArrowDropleft } from "react-icons/io";
 
 export default function ContactPage() {
     const [name, setName] = useState("");
@@ -73,11 +75,11 @@ export default function ContactPage() {
     }
 
     return (
-        <div ref={form} className='relative w-full flex flex-col justify-center gap-5'>
+        <div ref={form} className='w-full flex flex-col justify-center gap-5'>
 
             <p className="text-center font-bold text-[3rem] leading-none pb-12">Get In <span className="text-[#CBACF9]">Contact</span></p>
 
-            <div className='flex flex-col mx-[25rem]'>
+            <div className='flex flex-col mx-0 md:mx-[10rem] xl:mx-[25rem]'>
                 <label className='text-lg'>Name or Company</label>
                 <input
                     onChange={(e) => setName(e.target.value)}
@@ -88,7 +90,7 @@ export default function ContactPage() {
                 {errors.name && <p className="text-red-500">{errors.name}</p>}
             </div>
 
-            <div className='flex flex-col mx-[25rem]'>
+            <div className='flex flex-col mx-0 md:mx-[10rem] xl:mx-[25rem]'>
                 <label className='text-lg'>E-Mail Address</label>
                 <input
                     onChange={(e) => setEmail(e.target.value)}
@@ -99,7 +101,7 @@ export default function ContactPage() {
                 {errors.email && <p className="text-red-500">{errors.email}</p>}
             </div>
 
-            <div className='flex flex-col mx-[25rem]'>
+            <div className='flex flex-col mx-0 md:mx-[10rem] xl:mx-[25rem]'>
                 <label className='text-lg'>Message</label>
                 <textarea
                     onChange={(e) => setMessage(e.target.value)}

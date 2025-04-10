@@ -12,16 +12,24 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <div className="bg-[url('/bg.png')] bg-contain bg-top flex justify-center items-center min-h-screen px-6">
-          <div className="flex justify-between w-full absolute top-0 left-0">
-            <img src="/spotlightleft.png" alt="spotlightleft" className="w-[60rem] h-[50rem]" />
-            <img src="/spotlightright.png" alt="spotlightright" className="w-[60rem] h-[50rem]" />
+        <div className="bg-[url('/bg.png')] bg-contain bg-top min-h-screen flex justify-center items-center px-6">
+          <div className="absolute inset-0 w-full h-full pointer-events-none">
+            <img
+              src="/spotlightleft.png"
+              alt="spotlightleft"
+              className="hidden sm:block absolute top-0 left-0 w-[30rem] lg:w-[60rem] z-0"
+            />
+            <img
+              src="/spotlightright.png"
+              alt="spotlightright"
+              className="hidden sm:block absolute top-0 right-0 w-[30rem] lg:w-[60rem] z-0"
+            />
           </div>
-          <div className="w-full max-w-[100rem]"> {/* Hier die max. Breite setzen */}
+
+          <div className="w-full max-w-[100rem] z-10">
             {children}
           </div>
         </div>
